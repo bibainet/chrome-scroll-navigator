@@ -1,0 +1,15 @@
+#scrollnavigator-browser-extension-bar {
+position: fixed !important;
+left: 0 !important;
+top: 0 !important;
+bottom: 0 !important;
+margin: 0 !important;
+padding: 0 !important;
+width: 1px !important;
+height: 100% !important;
+border: none !important;
+outline: none !important;
+box-shadow: none !important;
+opacity: 0 !important;
+z-index: 100500 !important;
+}
