@@ -15,4 +15,6 @@ So, you don't need to aim any buttons, just move a mouse pointer to the screen l
 
 This extension may not work properly on some websites with nonstandard layout implementation.
 
+Source code: [https://github.com/Bibainet/chrome-scroll-navigator](https://github.com/Bibainet/chrome-scroll-navigator)
+
 ###### This project is licensed under the terms of the GNU GPL v2 license.
