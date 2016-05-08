@@ -17,4 +17,4 @@ This extension may not work properly on some websites with nonstandard layout im
 
 Source code: [https://github.com/Bibainet/chrome-scroll-navigator](https://github.com/Bibainet/chrome-scroll-navigator)
 
-###### This project is licensed under the terms of the GNU GPL v2 license.
+This project is licensed under the terms of the GNU GPL v2 license.

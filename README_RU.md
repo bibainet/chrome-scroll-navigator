@@ -17,4 +17,4 @@ Scroll navigator — дополнение для браузера
 
 Исходный код: [https://github.com/Bibainet/chrome-scroll-navigator](https://github.com/Bibainet/chrome-scroll-navigator)
 
-###### Проект распространяется под лицензией GNU GPL v2.
+Проект распространяется под лицензией GNU GPL v2.
