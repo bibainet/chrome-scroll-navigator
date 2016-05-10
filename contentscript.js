@@ -6,6 +6,14 @@ var div = document.createElement('div');
 div.setAttribute('id', 'scrollnavigator-browser-extension-bar');
 div.setAttribute('draggable', true);
 
+// Prevent other event handlers to be executed
+function stopEvent(event) {
+	if (event.preventDefault != undefined) event.preventDefault();
+	if (event.stopPropagation != undefined) event.stopPropagation();
+	if (event.returnValue != undefined) event.returnValue = false;
+	return false;
+};
+
 // Scroll to top/back
 div.onclick = function (event) {
 	if (window.pageYOffset <= 0) {
@@ -15,7 +23,7 @@ div.onclick = function (event) {
 		lastPosition = window.pageYOffset;
 		window.scrollTo(window.pageXOffset, 0);
 	};
-	return false;
+	return stopEvent(event);
 };
 
 // Scroll to bottom/back
@@ -29,18 +37,16 @@ div.oncontextmenu = function (event) {
 		lastPosition = window.pageYOffset;
 		window.scrollTo(window.pageXOffset, document.body.clientHeight);
 	};
-	if (event.preventDefault != undefined) event.preventDefault();
-	if (event.returnValue != undefined) event.returnValue = false;
-	return false;
+	return stopEvent(event);
 };
 
 // Scroll to exact position
 div.ondragstart = function (event) {
 	if (document.body.clientHeight > window.innerHeight)
 		window.scrollTo(window.pageXOffset, Math.ceil(event.clientY / window.innerHeight * (document.body.clientHeight - window.innerHeight)));
-	return false;
+	return stopEvent(event);
 };
 
-document.body.appendChild(div);
+document.body.appendChild(div); // document.body.insertBefore(div, document.body.firstChild || null);
 
 })();

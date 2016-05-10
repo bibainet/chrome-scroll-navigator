@@ -12,4 +12,5 @@ outline: none !important;
 box-shadow: none !important;
 opacity: 0 !important;
 z-index: 100500 !important;
+cursor: ns-resize !important;
 }
