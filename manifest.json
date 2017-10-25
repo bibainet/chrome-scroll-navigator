@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Scroll navigator",
 	"short_name": "Scroll navigator",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"author": "Alexander Bibanin",
 	"description": "__MSG_APPDESCRIPTION__",
 	"icons": {
@@ -13,7 +13,7 @@
 	},
 	"default_locale": "en",
 	"offline_enabled": true,
-	"homepage_url": "https://github.com/Bibainet/chrome-scroll-navigator",
+	"homepage_url": "https://github.com/bibainet/chrome-scroll-navigator",
 	"permissions": ["activeTab"],
 	"content_scripts": [{
 		"matches": ["<all_urls>"],

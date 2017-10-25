@@ -6,29 +6,31 @@ Scroll navigator browser extension
 * Left click on the left edge of any page — scroll to the top.
 * Right click — scroll to the bottom.
 * Click again — return to the previous position and continue reading.
-* Click on the toolbar icon — scroll to the top/bottom.
 * Drag the left edge — scroll to the specified position.
+* Click on the toolbar icon — scroll to the top/bottom.
 
----
+----
 
 This extension does not affect the appearance of web pages, it does not create "scroll to the top" buttons.
 So, you don't need to aim any buttons, just move a mouse pointer to the screen left edge, **fast and easy**!
 
 To use this extension, the browser window should be maximized, side bar should be hidden.
 
-This extension may not work properly on some websites with nonstandard layout implementation.
+This extension may not work properly on some websites with nonstandard layouts.
 
----
+----
 
-This project is licensed under the terms of the GNU GPL v2 license
+This project is licensed under the terms of the GNU GPL v2 license.
 
-Source code: <https://github.com/Bibainet/chrome-scroll-navigator>
-
----
+Source code: <https://github.com/bibainet/chrome-scroll-navigator>
 
 
 Version history
 ---------------
+
+#### 1.0.2
+
+* Several internal improvements and fixes
 
 #### 1.0.1
 
