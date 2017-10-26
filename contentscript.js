@@ -85,6 +85,17 @@ scrollBar.onwheel = function(event) {
 	return stopEvent(event);
 };
 
+// On mouse enter: show debug info hint if the CTRL key is pressed
+scrollBar.onmouseenter = function(event) {
+	event.ctrlKey && this.setAttribute('title',
+`innerHeight: ${window.innerHeight}
+scrollHeight: ${document.body.scrollHeight}
+clientHeight: ${document.body.clientHeight}
+offsetHeight: ${document.body.offsetHeight}
+Fits in window: ${document.body.scrollHeight <= window.innerHeight ? 'YES' : 'no'}
+Body overflow: ${document.body.scrollHeight != document.body.clientHeight ? 'YES' : 'no'}`);
+};
+
 // Insert the element into the DOM tree
 document.body.appendChild(scrollBar);
 
