@@ -53,28 +53,28 @@ scrollBar.onclick = function(event) {
 
 // On right click: scroll to bottom/back
 scrollBar.oncontextmenu = function(event) {
-	if (document.body.clientHeight <= window.innerHeight) {
+	if (document.body.scrollHeight <= window.innerHeight) {
 		// The whole document fits into window or there is non-standard page layout,
 		// try to scroll to bottom in any case
 		window.scrollTo(window.pageXOffset, 1e5);
-	} else if (window.pageYOffset >= document.body.clientHeight - window.innerHeight) {
+	} else if (window.pageYOffset >= document.body.scrollHeight - window.innerHeight) {
 		// Scroll back to lastPosition
 		window.scrollTo(window.pageXOffset, lastPosition);
-		lastPosition = document.body.clientHeight - window.innerHeight;
+		lastPosition = document.body.scrollHeight - window.innerHeight;
 	} else {
 		// Scroll to bottom, save window.pageYOffset in lastPosition
 		lastPosition = window.pageYOffset;
-		window.scrollTo(window.pageXOffset, document.body.clientHeight);
+		window.scrollTo(window.pageXOffset, document.body.scrollHeight);
 	};
 	return stopEvent(event);
 };
 
 // On drag start: scroll to exact position
 scrollBar.ondragstart = function(event) {
-	if (0 < window.innerHeight && window.innerHeight < document.body.clientHeight) {
+	if (0 < window.innerHeight && window.innerHeight < document.body.scrollHeight) {
 		// The document doesn't fit into window, scroll it
 		// Convert the fractional value (event.clientY / window.innerHeight) (0..1) to the absolute scroll offset
-		window.scrollTo(window.pageXOffset, Math.ceil(event.clientY / window.innerHeight * (document.body.clientHeight - window.innerHeight)));
+		window.scrollTo(window.pageXOffset, Math.ceil(event.clientY / window.innerHeight * (document.body.scrollHeight - window.innerHeight)));
 	};
 	return stopEvent(event);
 };
