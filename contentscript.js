@@ -79,6 +79,12 @@ scrollBar.ondragstart = function(event) {
 	return stopEvent(event);
 };
 
+// On mouse wheel: scroll up/down by one page (whole screen)
+scrollBar.onwheel = function(event) {
+	window.scrollBy(0, Math.floor(window.innerHeight * 0.9 * Math.sign(event.deltaY)));
+	return stopEvent(event);
+};
+
 // Insert the element into the DOM tree
 document.body.appendChild(scrollBar);
 
