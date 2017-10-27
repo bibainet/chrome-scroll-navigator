@@ -1,3 +1,8 @@
+/**
+ * Scroll navigator browser extension.
+ * @version 1.0.3
+ */
+
 chrome.browserAction.onClicked.addListener(function(tab) {
 	// Browser action button click. Scroll page to top/bottom.
 	chrome.tabs.executeScript({

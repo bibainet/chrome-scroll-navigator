@@ -7,6 +7,7 @@ Scroll navigator browser extension
 * Right click — scroll to the bottom.
 * Click again — return to the previous position and continue reading.
 * Drag the left edge — scroll to the specified position.
+* Mouse wheel — scroll up/down by one page (whole screen).
 * Click on the toolbar icon — scroll to the top/bottom.
 
 ----
@@ -28,11 +29,16 @@ Source code: <https://github.com/bibainet/chrome-scroll-navigator>
 Version history
 ---------------
 
-#### 1.0.2
+#### 1.0.3 2017.10.27
+
+* Fix scroll down issues on some sites with nonstandard layouts
++ Added: scroll up/down by one page (whole screen) on mouse wheel
+
+#### 1.0.2 2017.10.25
 
 * Several internal improvements and fixes
 
-#### 1.0.1
+#### 1.0.1 2016.05.10
 
 + The mouse pointer, when moved to the screen left edge, is now changed to 'ns-resize' indicating the scrolling feature
 * Always prevent the default click event handlers to be executed
