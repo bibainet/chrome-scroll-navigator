@@ -1,7 +1,7 @@
 Scroll navigator browser extension
 ==================================
 
-**Just move a mouse pointer to the screen left edge on any page and click.**
+**Just move the mouse pointer to the left border of the screen on any page and click.**
 
 * Left click on the left edge of any page — scroll to the top.
 * Right click — scroll to the bottom.
@@ -12,12 +12,12 @@ Scroll navigator browser extension
 
 ----
 
-This extension does not affect the appearance of web pages, it does not create "scroll to the top" buttons.
-So, you don't need to aim any buttons, just move a mouse pointer to the screen left edge, **fast and easy**!
+This extension does not affect the appearance of web pages, it does not create "scroll to top" button.
+So, you don't need to aim any buttons, just move the pointer to the left until it stops, fast and easy!
 
 To use this extension, the browser window should be maximized, side bar should be hidden.
 
-This extension may not work properly on some websites with nonstandard layouts.
+This extension may not work properly on some websites with non-standard layouts.
 
 ----
 
@@ -29,16 +29,16 @@ Source code: <https://github.com/bibainet/chrome-scroll-navigator>
 Version history
 ---------------
 
-#### 1.0.3 2017.10.27
+### 1.0.3 2017.10.27
 
-* Fix scroll down issues on some sites with nonstandard layouts
+* Fix scroll down issues on some sites with non-standard layouts
 + Added: scroll up/down by one page (whole screen) on mouse wheel
 
-#### 1.0.2 2017.10.25
+### 1.0.2 2017.10.25
 
 * Several internal improvements and fixes
 
-#### 1.0.1 2016.05.10
+### 1.0.1 2016.05.10
 
 + The mouse pointer, when moved to the screen left edge, is now changed to 'ns-resize' indicating the scrolling feature
 * Always prevent the default click event handlers to be executed
