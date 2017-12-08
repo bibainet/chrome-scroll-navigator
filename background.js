@@ -1,6 +1,6 @@
 /**
  * Scroll navigator browser extension.
- * @version 1.0.3
+ * @version 1.0.4
  */
 
 chrome.browserAction.onClicked.addListener(function(tab) {
