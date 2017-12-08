@@ -22,7 +22,7 @@ var stopEvent = function(event) {
  * Previous value of the window.pageYOffset, before scrolling
  * @type {number}
  */
-var lastPosition = 0;
+var lastYOffset = 0;
 
 /**
  * The scroll bar element
@@ -30,8 +30,8 @@ var lastPosition = 0;
  */
 var scrollBar = document.createElement('div');
 scrollBar.setAttribute('id', 'scrollnavigator-browser-extension-bar');
-// @ts-ignore
-scrollBar.setAttribute('draggable', true); // Non-boolean values do not work
+// @ts-ignore Non-boolean values do not work
+scrollBar.setAttribute('draggable', true);
 
 // Attach event handlers to the scrollBar
 
@@ -47,12 +47,22 @@ scrollBar.onclick = function(event) {
 		overflows: document.body.scrollHeight != document.body.clientHeight,
 	});
 	if (window.pageYOffset <= 0) {
-		// Scroll back to lastPosition
-		window.scrollTo(window.pageXOffset, lastPosition);
-		lastPosition = 0;
+		// At the top of the page
+		if (lastYOffset) {
+			// Scroll back to the lastYOffset
+			window.scrollTo(window.pageXOffset, lastYOffset);
+			lastYOffset = 0; // Restore the initial state?
+		} else if (window.pageXOffset > 0) {
+			// No need to scroll vertically, scroll right/left
+			// |<- Scroll to the left
+			window.scrollTo(0, 0);
+		} else if (document.body.scrollWidth > window.innerWidth) {
+			// Scroll to the right ->|
+			window.scrollTo(document.body.scrollWidth, 0);
+		};
 	} else {
-		// Scroll to top, save window.pageYOffset in lastPosition
-		lastPosition = window.pageYOffset;
+		// Scroll to the top, save the current Y-offset in lastYOffset
+		lastYOffset = window.pageYOffset;
 		window.scrollTo(window.pageXOffset, 0);
 	};
 	return stopEvent(event);
@@ -65,12 +75,12 @@ scrollBar.oncontextmenu = function(event) {
 		// try to scroll to bottom in any case
 		window.scrollTo(window.pageXOffset, 1e5);
 	} else if (window.pageYOffset >= document.body.scrollHeight - window.innerHeight) {
-		// Scroll back to lastPosition
-		window.scrollTo(window.pageXOffset, lastPosition);
-		lastPosition = document.body.scrollHeight - window.innerHeight;
+		// Scroll back to lastYOffset
+		window.scrollTo(window.pageXOffset, lastYOffset);
+		// lastYOffset = document.body.scrollHeight - window.innerHeight; // Restore the initial state?
 	} else {
-		// Scroll to bottom, save window.pageYOffset in lastPosition
-		lastPosition = window.pageYOffset;
+		// Scroll to the bottom, save the current Y-offset in lastYOffset
+		lastYOffset = window.pageYOffset;
 		window.scrollTo(window.pageXOffset, document.body.scrollHeight);
 	};
 	return stopEvent(event);
