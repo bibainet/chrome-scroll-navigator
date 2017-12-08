@@ -13,10 +13,9 @@
  * @return {boolean} always false: "return stopEvent(event);"
  */
 var stopEvent = function(event) {
-	(event.preventDefault !== undefined) && event.preventDefault();
-	(event.stopPropagation !== undefined) && event.stopPropagation();
-	(event.returnValue !== undefined) && (event.returnValue = false);
-	return false;
+	event.preventDefault && event.preventDefault();
+	event.stopPropagation && event.stopPropagation();
+	return event.returnValue = false;
 };
 
 /**
