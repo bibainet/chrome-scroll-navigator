@@ -38,6 +38,15 @@ scrollBar.setAttribute('draggable', true); // Non-boolean values do not work
 
 // On left click: scroll to top/back
 scrollBar.onclick = function(event) {
+	// Log debug info if the CTRL key is pressed
+	event.ctrlKey && console.log({
+		innerHeight: window.innerHeight,
+		scrollHeight: document.body.scrollHeight,
+		clientHeight: document.body.clientHeight,
+		offsetHeight: document.body.offsetHeight,
+		fits: document.body.scrollHeight <= window.innerHeight,
+		overflows: document.body.scrollHeight != document.body.clientHeight,
+	});
 	if (window.pageYOffset <= 0) {
 		// Scroll back to lastPosition
 		window.scrollTo(window.pageXOffset, lastPosition);
@@ -82,17 +91,6 @@ scrollBar.ondragstart = function(event) {
 scrollBar.onwheel = function(event) {
 	window.scrollBy(0, Math.floor(window.innerHeight * 0.9 * Math.sign(event.deltaY)));
 	return stopEvent(event);
-};
-
-// On mouse enter: show debug info hint if the CTRL key is pressed
-scrollBar.onmouseenter = function(event) {
-	event.ctrlKey && this.setAttribute('title',
-`innerHeight: ${window.innerHeight}
-scrollHeight: ${document.body.scrollHeight}
-clientHeight: ${document.body.clientHeight}
-offsetHeight: ${document.body.offsetHeight}
-Fits in window: ${document.body.scrollHeight <= window.innerHeight ? 'YES' : 'no'}
-Body overflow: ${document.body.scrollHeight != document.body.clientHeight ? 'YES' : 'no'}`);
 };
 
 // Insert the element into the DOM tree
